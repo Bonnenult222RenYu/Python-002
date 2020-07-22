@@ -8,15 +8,16 @@
 
 # 作业
 
-作业文件夹:my_spider
+作业文件夹:my_spidermy_spider/my_spider/spiders/maoyan1.py
 作业一主要代码：
-+ my_spider/my_spider/spiders/maoyan1.py
-+ my_spider/my_spider/pipelines.py
+
++ [my_spider/my_spider/spiders/maoyan1.py](https://github.com/Bonnenult222RenYu/Python-002/blob/master/week01/my_spider/my_spider/spiders/maoyan1.py )
++ [my_spider/my_spider/pipelines.py](https://github.com/Bonnenult222RenYu/Python-002/blob/master/week01/my_spider/my_spider/pipelines.py)
 
 作业二主要代码：
-+ my_spider/my_spider/spiders/maoyan2.py
-+ my_spider/my_spider/pipelines.py
++ [my_spider/my_spider/spiders/maoyan2.py](https://github.com/Bonnenult222RenYu/Python-002/blob/master/week01/my_spider/my_spider/spiders/maoyan2.py)
++ [my_spider/my_spider/pipelines.py](https://github.com/Bonnenult222RenYu/Python-002/blob/master/week01/my_spider/my_spider/pipelines.py)
 
 生成文件：
-+ my_spider/maoyanmovie.csv
-+ my_spider/maoyanmovie2.csv
++ [my_spider/maoyanmovie.csv](https://github.com/Bonnenult222RenYu/Python-002/blob/master/week01/my_spider/maoyanmovie.csv)
++ [my_spider/maoyanmovie2.csv](https://github.com/Bonnenult222RenYu/Python-002/blob/master/week01/my_spider/maoyanmovie2.csv)
