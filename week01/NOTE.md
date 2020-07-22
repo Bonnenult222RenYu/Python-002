@@ -8,7 +8,7 @@
 
 # 作业
 
-作业文件夹:my_spidermy_spider 
+作业文件夹:my_spider
 
 作业一主要代码：
 
