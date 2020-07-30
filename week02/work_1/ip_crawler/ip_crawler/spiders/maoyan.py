@@ -13,7 +13,7 @@ class MaoyanSpider(scrapy.Spider):
         yield scrapy.Request(url=url, callback=self.parse)
 
     def parse(self, response):
-        movies = Selector(response=response).xpath('//div[@class="movie-hover-info"]')[:11]
+        movies = Selector(response=response).xpath('//div[@class="movie-hover-info"]')[:10]
         for movie in movies:
             item = MaoyanItem()
             m_title = movie.xpath('./div[1]/span[1]/text()')
