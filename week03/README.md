@@ -14,10 +14,22 @@
     + 连续IP地址前三位必须相同，否则报错
   + -w：扫描结果进行保存。
     + 当没有-w时，将终端输出。
-    + 有则保存至文件，终端不输出具体结果。
+    + 有则保存至文件，终端一般不输出具体结果。
++ 示例命令(```pmap.py```同一目录下逐一执行以下命令验证)：
+  +  ```python pmap.py -n 4 -f ping -ip 39.107.250.116 ```
+  + ``` python pmap.py -n 8 -f ping -ip 39.107.250.116-39.107.250.126``` 
+  + ``` python pmap.py -n 8 -f ping -ip 39.107.250.116-39.107.250.126 -w ping_result.txt -v```
+  + ```python pmap.py -n 8 -f tcp -ip 39.107.250.116 -v```
+  + ```python pmap.py -n 8 -f tcp -ip 39.107.250.116-39.107.250.126 -v -w tcp_result.json```
++ 运行以上命令便可得到work_1中的```ping_result.txt```以及```tcp_result.json```文件。
 
 
 
 **作业2：**
 
 + 截止前没更新就是没做。
+
+
+
+**总结查看**[NOTE.md](https://github.com/Bonnenult222RenYu/Python-002/blob/master/week03/NOTE.md)
+
