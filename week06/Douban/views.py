@@ -33,7 +33,7 @@ def books_short(request):
 def start_lt_3(request):
     if request.method == "GET":
         key = request.GET.get('q', "")
-        conditions = {'n_star__lt': 3}
+        conditions = {'n_star__gt': 3}
         keys = None
         if key:
             conditions['short__icontains'] = key
