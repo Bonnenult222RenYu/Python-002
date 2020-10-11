@@ -18,39 +18,37 @@
                 <h1>欢迎登录</h1>
                 <form action="" method="post" style="border: 2px solid #66ccff;padding: 10%;">
                     {% csrf_token  %}
-                    <div class="form-group has-feedback">
-                        <label for="email">邮箱</label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
-                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                    </div>
-                    <div class="form-group has-feedback">
-                        <label for="password">密码</label>
-                        <input type="password" class="form-control" name="password" id="password" placeholder="Password"
-                            minlength="8" required>
-                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                    </div>
+                    {% for field in form %}
+                        <div class="form-group has-feedback">
+                            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                            {{ field }}
+                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                            <span class="text-danger">{{ field.errors.0 }}</span>
+                        </div>
+                    {% endfor %}
                     <div class="checkbox">
                         <label>
                             <input type="checkbox" name="is_check" value="True"> 7天免登录
                         </label>
                     </div>
                     <button type="submit" class="btn btn-success" id="login_btn">登录</button>
-                    <span class="text-danger">{{ error_msg }}</span>
+                    <span id="err" class="text-danger">{{ error_msg }}</span>
 
                 </form>
                 <script>
                     $("#email").on("input", function () {
                         var myreg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
                         var result = myreg.test($(this).val());
-                        // console.log(result)
                         if (result) {
                             $("#login_btn").removeAttr("disabled");
+                            $("#err").text("");
                             $(this).parent().removeClass("has-error");
                             $(this).next().removeClass("glyphicon-remove");
                             $(this).parent().addClass("has-success");
                             $(this).next().addClass("glyphicon-ok");
                         } else {
                             $("#login_btn").attr('disabled',"true");
+                            $("#err").text("输入正确的邮箱");
                             $(this).parent().removeClass("has-success");
                             $(this).next().removeClass("glyphicon-ok");
                             $(this).parent().addClass("has-error");
@@ -58,7 +56,7 @@
                         }
                     });
                     $("#password").on("input",function () {
-                        var result = $(this).val();
+                        var result = $(this).val().length >= 8;
                         if (result) {
                             $(this).parent().removeClass("has-error");
                             $(this).next().removeClass("glyphicon-remove");
