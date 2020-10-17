@@ -52,7 +52,7 @@ class PhoneDetail(View):
         url = request.get_full_path().split("&name=")[0]
         # print(url)
         # print(unquote(title))
-        phone = Comments.objects.filter(Q(phone_title=title), Q(comment__icontains=name)|Q(user_name__icontains=name)).order_by('-id')
+        phone = Comments.objects.filter(Q(phone_title=title), Q(comment__icontains=name)|Q(user_name__icontains=name)).order_by('id')
         counter = phone.count()
         user_counter = phone.values('user_name').distinct().count()
         try:
